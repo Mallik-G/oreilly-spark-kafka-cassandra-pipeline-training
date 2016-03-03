@@ -11,3 +11,6 @@
 * Submission to [oreilly-pipeline@data-fellas.guru](mailto:oreilly-pipeline@data-fellas.guru)
 
 * [Into into Spark Streaming by Brian Clapper](https://www.youtube.com/watch?v=2STfulBcorA)
+
+* [Data Fellas](http://data-fellas.guru)
+* [Github Spark Notebook](https://github.com/andypetrella/spark-notebook)
