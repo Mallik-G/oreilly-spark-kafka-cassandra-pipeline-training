@@ -1,0 +1,19 @@
+docker run --rm -it -m 8g -p 19000:9000 -p 14040:4040 -p 14041:14041 -p 14042:4042 -p 14043:14043 -p 1111:1111 datafellas/oreilly-pipeline:1.0 bash
+
+source var.sh
+source start.sh
+source create.sh
+
+http://192.168.99.100:19000/notebooks/pipeline#notebooks
+
+kafka-topics --zookeeper localhost:2181 --list
+kafka-console-consumer --topic ticks --from-beginning --zookeeper localhost:2181
+kafka-console-consumer --topic quotes --from-beginning --zookeeper localhost:2181
+
+
+~/apache-cassandra-2.2.0/bin/cqlsh
+use pipeline;
+select * from quotes limit 1000;
+
+172.17.0.2
+import akka.http.scaladsl.server.directives.ParameterDirectives.ParamMagnet
